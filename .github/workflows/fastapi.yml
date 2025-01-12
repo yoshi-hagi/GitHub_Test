@@ -1,0 +1,24 @@
+name: Run Python-Script
+
+on: push
+
+jobs:
+  run-scrape:
+    runs-on: ubuntu-latest
+    steps:
+      # リポジトリのチェックアウト
+      - uses: actions/checkout@v4
+
+      # Python のセットアップ (3.x 系をインストール)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # requests のインストール
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # scrape.py の実行
+      - name: Run scrape.py
+        run: python scrape.py
