@@ -3,7 +3,7 @@ name: Run Python-Script
 on: push
 
 jobs:
-  run-scrape:
+  run-python-test-code:
     runs-on: ubuntu-latest
     steps:
       # リポジトリのチェックアウト
@@ -15,9 +15,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      # # requests のインストール
-      # - name: Install dependencies
-      #   run: pip install -r requirements.txt
+      # requests のインストール
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       # get_info_from_fastapi.py の実行
       - name: Run get_info_from_fastapi.py
