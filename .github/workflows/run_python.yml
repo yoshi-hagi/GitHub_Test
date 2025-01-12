@@ -1,0 +1,24 @@
+name: Run Python-Script
+
+on: push
+
+jobs:
+  run-scrape:
+    runs-on: ubuntu-latest
+    steps:
+      # リポジトリのチェックアウト
+      - uses: actions/checkout@v4
+
+      # Python のセットアップ (3.12系をインストール)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # # requests のインストール
+      # - name: Install dependencies
+      #   run: pip install -r requirements.txt
+
+      # get_info_from_fastapi.py の実行
+      - name: Run get_info_from_fastapi.py
+        run: python get_info_from_fastapi.py
