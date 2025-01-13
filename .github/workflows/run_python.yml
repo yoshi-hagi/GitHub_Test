@@ -22,3 +22,14 @@ jobs:
       # get_info_from_fastapi.py の実行
       - name: Run get_info_from_fastapi.py
         run: python get_info_from_fastapi.py
+
+      # アーティファクトのアップロード
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: SI_datas      # アーティファクト名（任意）
+          path: | # アップロードしたいファイル/ディレクトリ
+            標準報酬月額表.csv
+            都道府県別健康保険料率・介護保険料率表.csv
+            厚生年金保険料率表.csv
+

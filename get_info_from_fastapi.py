@@ -21,7 +21,9 @@ for label, url in zip(labels, urls):
     data_json = response.json()      # API応答をJSONに変換
     df = pd.DataFrame(data_json)     # JSONをDataFrameに変換
     
-    print(f"=== {label} ===")
-    print(df.head())  # 先頭数行だけ表示（行数が多い場合）
-    print()           # 改行
+    df.to_csv(f'{label}.csv', encoding='utf-8_sig')
+    
+    # print(f"=== {label} ===")
+    # print(df.head())  # 先頭数行だけ表示（行数が多い場合）
+    # print()           # 改行
 
