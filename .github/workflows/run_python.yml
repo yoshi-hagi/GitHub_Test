@@ -1,6 +1,10 @@
 name: Run Python-Script
 
-on: push
+on:
+  push:
+  schedule:
+    # 12時間ごとに (0:00 UTC と 12:00 UTC) 実行
+    - cron: "0 */12 * * *"
 
 jobs:
   run-python-test-code:
