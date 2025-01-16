@@ -29,7 +29,7 @@ jobs:
 
       # アーティファクトのアップロード
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: SI_datas      # アーティファクト名（任意）
           path: Datafiles/**
