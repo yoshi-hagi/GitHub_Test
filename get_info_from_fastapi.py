@@ -10,9 +10,9 @@ url3 = 'https://calcsi.azurewebsites.net/wr/read/all'   # 3.厚生年金保険�
 
 # ラベルリスト
 labels = [
-    "標準報酬月額表", 
-    "都道府県別健康保険料率・介護保険料率表", 
-    "厚生年金保険料率表"
+    "Standardized Monthly Amount of Remuneration", 
+    "Health Insurance Rate and Long-Term Care Insurance Rate by prefecture", 
+    "Employees' Pension Insurance Rate"
 ]
 
 # URLとラベルのペアをzipでまとめる
