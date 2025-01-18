@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import os
+from datetime import datetime
 
 # URLリスト
 url1 = 'https://calcsi.azurewebsites.net/smr/read/all'  # 1.標準報酬月額表
@@ -23,3 +24,12 @@ for label, url in zip(labels, urls):
     df = pd.DataFrame(data_json)     # JSONをDataFrameに変換
     
     df.to_csv(os.path.join(os.getcwd(), 'Datafiles', f'{label}.csv'), encoding='utf-8_sig')
+
+# 作成日時を記載したtxtファイルを生成
+title_date = datetime.now().strftime("%Y-%m-%d-%H-%M")
+path = os.path.join(os.getcwd(), 'Datafiles', f'{title_date}_gen.txt')
+
+s = f'This Data is generated at {title_date}'
+
+with open(path, mode="x") as f:
+    f.write(s)
