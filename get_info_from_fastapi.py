@@ -3,6 +3,9 @@ import pandas as pd
 import os
 from datetime import datetime
 
+# 作成日時の取得
+title_date = datetime.now().strftime("%Y-%m-%d-%H-%M")
+
 # URLリスト
 url1 = 'https://calcsi.azurewebsites.net/smr/read/all'  # 1.標準報酬月額表
 url2 = 'https://calcsi.azurewebsites.net/hpr/read/all'  # 2.都道府県別健康保険料率・介護保険料率表
@@ -23,10 +26,9 @@ for label, url in zip(labels, urls):
     data_json = response.json()      # API応答をJSONに変換
     df = pd.DataFrame(data_json)     # JSONをDataFrameに変換
     
-    df.to_csv(os.path.join(os.getcwd(), 'Datafiles', f'{label}.csv'), encoding='utf-8_sig')
+    df.to_csv(os.path.join(os.getcwd(), 'Datafiles', f'{title_date}_{label}.csv'), encoding='utf-8_sig')
 
 # 作成日時を記載したtxtファイルを生成
-title_date = datetime.now().strftime("%Y-%m-%d-%H-%M")
 path = os.path.join(os.getcwd(), 'Datafiles', f'{title_date}_gen.txt')
 
 s = f'This Data is generated at {title_date}'

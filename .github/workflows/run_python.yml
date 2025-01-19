@@ -34,3 +34,10 @@ jobs:
           name: SI_datas      # アーティファクト名（任意）
           path: Datafiles/**
 
+      # アーティファクトのダウンロード
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: SI_datas      # アーティファクト名（任意）
+          path: Datafiles/**
+
