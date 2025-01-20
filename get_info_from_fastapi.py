@@ -31,7 +31,7 @@ for label, url in zip(labels, urls):
 # 作成日時を記載したtxtファイルを生成
 path = os.path.join(os.getcwd(), 'Datafiles', f'{title_date}_gen.txt')
 
-s = f'This Data is generated at {title_date}'
+s = f'This Data is generated at {title_date}.'
 
 with open(path, mode="x") as f:
     f.write(s)
